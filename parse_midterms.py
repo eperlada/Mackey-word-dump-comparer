@@ -27,12 +27,13 @@ for i in range(len(wordlist)):
 BASE_DIR = ""
 TESTS = []
 if sys.argv[4] == "112":
-    BASE_DIR = "https://www2.ucsc.edu/courses/cmps112-wm/:/Old-Exams/"
-    TESTS = ["cmps112-2017q2-midterm.tt",
-             "cmps112-2017q4-midterm.tt",
-             "cmps112-2018q1-midterm.tt",
+    BASE_DIR = "https://www2.ucsc.edu/courses/cse112-wm/:/Old-Exams/"
+    TESTS = ["cmps112-2018q1-midterm.tt",
              "cmps112-2018q2-midterm.tt",
-             "cmps112-2018q4-midterm.tt ",
+             "cmps112-2018q4-midterm.tt",
+			 "cmps112-2019q1-midterm.tt",
+			 "cse112-2020q1-midterm.tt",
+			 "cse112-2020q4-midterm.tt",
             ]
 elif sys.argv[4] == "104a":
     BASE_DIR = "https://www2.ucsc.edu/courses/cmps104a-wm/:/Old-Exams/"
@@ -54,7 +55,9 @@ else:
 for TEST in TESTS:
     URL = BASE_DIR + TEST
 
-    txt = urllib.request.urlopen(URL).read()
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"}
+    req = urllib.request.Request(URL, headers=headers)
+    txt = urllib.request.urlopen(req).read()
     txt = txt.decode("ISO-8859-1")
 
     free_response = txt.split("Multiple choice")[0]
