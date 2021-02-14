@@ -1,2 +1,2 @@
-# CMPS112
+# CSE112
 # Mackey-word-dump-comparer
