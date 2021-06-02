@@ -58,7 +58,14 @@ elif sys.argv[4] == "111":
               "cse111-2019q4-midterm.tt",
               "cse111-2020q1-midterm.tt",
               "cse111-2020q4-midterm.tt",
-              "cse111-2021q1-midterm.tt"
+              "cse111-2021q1-midterm.tt",
+			  "cse111-2021q1-final.tt",
+			  "cse111-2020q4-final.tt",
+			  "cse111-2020q1-final.tt",
+			  "cse111-2019q4-final.tt",
+			  "cmps109-2019q3-final.tt",
+			  "cmps109-2019q2-final.tt",
+			  "cmps109-2019q1-final.tt"
             ]
 else:
     sys.exit("104a, 111, or 112 only")
